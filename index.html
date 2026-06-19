@@ -257,9 +257,9 @@ z-index:2;
 
 font-family:Orbitron;
 
-font-size:100px;
+font-size:clamp(40px,10vw,100px);
 
-letter-spacing:10px;
+letter-spacing:3px;
 
 color:#00ffff;
 
@@ -325,7 +325,7 @@ transform:translate(-3px,-3px);
 
 margin-top:20px;
 
-font-size:25px;
+font-size:clamp(14px,3vw,25px);
 
 letter-spacing:5px;
 
@@ -1748,7 +1748,31 @@ color:#ddd;
 }
 
 
+@media (max-width:768px){
 
+.hero h1{
+font-size:48px;
+letter-spacing:2px;
+}
+
+.hero h2{
+font-size:16px;
+letter-spacing:1px;
+}
+
+.typing{
+font-size:14px;
+}
+
+.logo{
+font-size:20px;
+}
+
+nav ul{
+gap:10px;
+}
+
+}
 </style>
 
 
