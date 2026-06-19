@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JYFLASHER | Mobile Technology Solution</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#020617;
+color:white;
+font-family:Poppins,sans-serif;
+overflow-x:hidden;
+
+}
+
+
+
+/* LOADING */
+
+
+.loader{
+
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+
+}
+
+
+.loader h1{
+
+font-family:Orbitron;
+font-size:45px;
+color:#00ffff;
+text-shadow:
+0 0 20px cyan,
+0 0 50px cyan;
+
+animation:blink 1s infinite;
+
+}
+
+
+.loader p{
+
+margin-top:20px;
+color:#aaa;
+font-family:monospace;
+
+}
+
+
+@keyframes blink{
+
+50%{
+opacity:.4;
+}
+
+}
+
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 8%;
+
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(15px);
+
+z-index:1000;
+
+border-bottom:1px solid #00ffff33;
+
+}
+
+
+
+.logo{
+
+font-family:Orbitron;
+font-size:30px;
+font-weight:900;
+
+color:#00ffff;
+
+text-shadow:
+
+0 0 10px cyan,
+0 0 30px cyan;
+
+}
+
+
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+
+}
+
+
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+transition:.3s;
+
+}
+
+
+nav ul li a:hover{
+
+color:#00ffff;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+/* GRID BACKGROUND */
+
+
+.hero::before{
+
+
+content:"";
+
+position:absolute;
+
+width:200%;
+height:200%;
+
+
+background-image:
+
+linear-gradient(#00ffff18 1px,transparent 1px),
+linear-gradient(90deg,#00ffff18 1px,transparent 1px);
+
+
+background-size:50px 50px;
+
+
+transform:
+perspective(500px)
+rotateX(60deg);
+
+
+animation:grid 10s linear infinite;
+
+
+}
+
+
+
+@keyframes grid{
+
+
+from{
+
+transform:
+translateY(0)
+perspective(500px)
+rotateX(60deg);
+
+}
+
+
+to{
+
+transform:
+translateY(50px)
+perspective(500px)
+rotateX(60deg);
+
+}
+
+
+}
+
+
+
+
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.hero h1{
+
+
+font-family:Orbitron;
+
+font-size:100px;
+
+letter-spacing:10px;
+
+color:#00ffff;
+
+
+text-shadow:
+
+
+0 0 10px cyan,
+
+0 0 40px cyan,
+
+0 0 90px cyan;
+
+
+animation:glitch 3s infinite;
+
+
+}
+
+
+
+
+@keyframes glitch{
+
+
+0%,100%{
+
+transform:none;
+
+}
+
+
+20%{
+
+transform:translate(-3px,3px);
+
+}
+
+
+40%{
+
+transform:translate(3px,-3px);
+
+}
+
+
+
+60%{
+
+transform:translate(-3px,-3px);
+
+}
+
+
+}
+
+
+
+
+
+.hero h2{
+
+
+margin-top:20px;
+
+font-size:25px;
+
+letter-spacing:5px;
+
+color:#ddd;
+
+
+}
+
+
+
+.typing{
+
+
+margin-top:20px;
+
+font-family:monospace;
+
+font-size:20px;
+
+color:#00ffff;
+
+
+}
+
+
+
+
+.btn{
+
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:15px 40px;
+
+
+background:#00ffff;
+
+color:#000;
+
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+
+box-shadow:
+
+0 0 20px cyan,
+
+0 0 50px cyan;
+
+
+transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+/* STAT */
+
+
+.stats{
+
+
+padding:100px 8%;
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(220px,1fr));
+
+
+gap:25px;
+
+
+}
+
+
+
+
+.stat{
+
+
+background:#0f172a;
+
+
+padding:40px;
+
+border-radius:20px;
+
+
+text-align:center;
+
+
+border:
+
+1px solid #00ffff33;
+
+
+transition:.4s;
+
+
+}
+
+
+
+.stat:hover{
+
+
+transform:translateY(-10px);
+
+
+box-shadow:
+
+0 0 30px #00ffff55;
+
+
+}
+
+
+
+
+.stat h2{
+
+
+font-size:50px;
+
+color:#00ffff;
+
+
+}
+
+
+
+
+
+
+/* SECTION */
+
+
+.section{
+
+
+padding:100px 8%;
+
+
+}
+
+
+
+
+.title{
+
+
+text-align:center;
+
+font-family:Orbitron;
+
+font-size:45px;
+
+color:#00ffff;
+
+margin-bottom:60px;
+
+
+}
+
+
+
+
+/* SERVICE CARD */
+
+
+.services{
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(300px,1fr));
+
+
+gap:25px;
+
+
+}
+
+
+
+
+.card{
+
+
+background:#0f172a;
+
+padding:30px;
+
+
+border-radius:25px;
+
+
+border:
+
+1px solid #00ffff22;
+
+
+transition:.4s;
+
+
+}
+
+
+
+
+.card:hover{
+
+
+transform:
+
+translateY(-15px);
+
+
+box-shadow:
+
+0 0 40px #00ffff44;
+
+
+}
+
+
+
+
+.card h3{
+
+
+color:#00ffff;
+
+font-size:25px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.card li{
+
+
+margin:8px 0;
+
+color:#ddd;
+
+
+}
+
+
+
+
+footer{
+
+
+background:#000;
+
+padding:50px;
+
+text-align:center;
+
+color:#888;
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="loader">
+
+<h1>JYFLASHER</h1>
+
+<p>
+INITIALIZING SYSTEM...
+</p>
+
+</div>
+
+
+
+<nav>
+
+
+<div class="logo">
+JYFLASHER
+</div>
+
+
+<ul>
+
+<li><a href="#">HOME</a></li>
+
+<li><a href="#service">SERVICE</a></li>
+
+<li><a href="#contact">CONTACT</a></li>
+
+</ul>
+
+
+</nav>
+
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<h1>
+JYFLASHER
+</h1>
+
+
+<h2>
+MOBILE SOFTWARE ENGINEERING
+</h2>
+
+
+<div class="typing">
+
+ANDROID • IOS • PC • TECHNOLOGY
+
+</div>
+
+
+
+<a class="btn" href="#service">
+
+EXPLORE SERVICE
+
+</a>
+
+
+</div>
+
+
+</section>
+
+<!-- SERVICE SECTION -->
+
+<section class="section" id="service">
+
+
+<h2 class="title">
+OUR SERVICES
+</h2>
+
+
+
+<div class="services">
+
+
+
+<div class="card">
+
+<h3>
+📱 ANDROID SOFTWARE ENGINEERING
+</h3>
+
+
+<ul>
+
+<li>✓ Flashing Android</li>
+
+<li>✓ Root Android</li>
+
+<li>✓ Magisk Setup</li>
+
+<li>✓ Custom Recovery</li>
+
+<li>✓ Custom ROM Installation</li>
+
+<li>✓ Firmware Upgrade</li>
+
+<li>✓ Firmware Downgrade</li>
+
+<li>✓ Bootloop Recovery</li>
+
+<li>✓ System Optimization</li>
+
+<li>✓ Performance Tuning</li>
+
+<li>✓ GCam Installation</li>
+
+<li>✓ Camera Optimization</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+🔐 DEVICE SUPPORT
+</h3>
+
+
+<ul>
+
+<li>✓ Google Account Assistance</li>
+
+<li>✓ Samsung Device Support</li>
+
+<li>✓ Xiaomi Device Support</li>
+
+<li>✓ Oppo Device Support</li>
+
+<li>✓ Vivo Device Support</li>
+
+<li>✓ Realme Device Support</li>
+
+<li>✓ Huawei Device Support</li>
+
+<li>✓ System Recovery</li>
+
+<li>✓ Device Maintenance</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+🎮 GAMING OPTIMIZATION
+</h3>
+
+
+<ul>
+
+<li>✓ FPS Optimization</li>
+
+<li>✓ Gaming Performance Setup</li>
+
+<li>✓ RAM Management</li>
+
+<li>✓ Storage Optimization</li>
+
+<li>✓ Thermal Optimization</li>
+
+<li>✓ Game Configuration</li>
+
+<li>✓ Background Cleanup</li>
+
+<li>✓ Battery Performance Setup</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+🔧 HARDWARE REPAIR
+</h3>
+
+
+<ul>
+
+
+<li>✓ LCD Replacement</li>
+
+<li>✓ Battery Replacement</li>
+
+<li>✓ Charging Port Repair</li>
+
+<li>✓ Speaker Repair</li>
+
+<li>✓ Microphone Repair</li>
+
+<li>✓ Camera Repair</li>
+
+<li>✓ Touchscreen Repair</li>
+
+<li>✓ Button Repair</li>
+
+<li>✓ Connector Repair</li>
+
+<li>✓ Mainboard Checking</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+💻 COMPUTER SERVICE
+</h3>
+
+
+<ul>
+
+
+<li>✓ Windows Installation</li>
+
+<li>✓ Driver Installation</li>
+
+<li>✓ SSD Upgrade</li>
+
+<li>✓ RAM Upgrade</li>
+
+<li>✓ PC Assembly</li>
+
+<li>✓ Software Installation</li>
+
+<li>✓ Virus Cleanup</li>
+
+<li>✓ System Optimization</li>
+
+<li>✓ PC Troubleshooting</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+🍎 iOS SERVICE
+</h3>
+
+
+<ul>
+
+
+<li>✓ iPhone System Restore</li>
+
+<li>✓ iOS Update</li>
+
+<li>✓ Software Troubleshooting</li>
+
+<li>✓ Backup Assistance</li>
+
+<li>✓ Device Diagnostics</li>
+
+<li>✓ Performance Optimization</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- WORK FLOW -->
+
+
+<section class="section">
+
+
+<h2 class="title">
+WORK PROCESS
+</h2>
+
+
+
+<div class="services">
+
+
+
+<div class="card">
+
+
+<h3>
+01. CONSULTATION
+</h3>
+
+
+<p>
+
+Pengecekan awal dan konsultasi masalah perangkat.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+02. DIAGNOSIS
+</h3>
+
+
+<p>
+
+Analisa kerusakan software maupun hardware.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+03. REPAIR
+</h3>
+
+
+<p>
+
+Proses perbaikan dilakukan dengan standar pengerjaan.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+04. TESTING
+</h3>
+
+
+<p>
+
+Pengujian perangkat sebelum diserahkan kembali.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- PORTFOLIO -->
+
+
+<section class="section">
+
+
+<h2 class="title">
+PROJECT GALLERY
+</h2>
+
+
+
+<div class="services">
+
+
+
+<div class="card">
+
+<h3>
+📱 Smartphone Recovery
+</h3>
+
+<p>
+Pemulihan sistem dan optimasi perangkat.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+💻 PC Build
+</h3>
+
+<p>
+Rakit dan upgrade komputer sesuai kebutuhan.
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+⚡ Performance Setup
+</h3>
+
+<p>
+Optimasi perangkat untuk penggunaan maksimal.
+</p>
+
+</div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- TESTIMONI -->
+
+
+<section class="section">
+
+
+<h2 class="title">
+CUSTOMER REVIEW
+</h2>
+
+
+
+<div class="card">
+
+
+<h3>
+⭐⭐⭐⭐⭐
+</h3>
+
+
+<p>
+
+"Pelayanan cepat, hasil rapi dan sangat membantu."
+
+</p>
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="card">
+
+
+<h3>
+⭐⭐⭐⭐⭐
+</h3>
+
+
+<p>
+
+"Tempat service terpercaya, teknisi profesional."
+
+</p>
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="card">
+
+
+<h3>
+⭐⭐⭐⭐⭐
+</h3>
+
+
+<p>
+
+"Website dan pelayanan JYFLASHER keren banget."
+
+</p>
+
+
+</div>
+
+
+
+
+</section>
+
+<!-- FAQ SECTION -->
+
+<section class="section">
+
+
+<h2 class="title">
+FAQ
+</h2>
+
+
+
+<div class="card">
+
+
+<h3 onclick="faq(1)" style="cursor:pointer">
+
+❓ Berapa lama proses service?
+
+</h3>
+
+
+<p id="faq1" style="display:none">
+
+Waktu pengerjaan tergantung kondisi perangkat dan tingkat kerusakan.
+
+</p>
+
+
+</div>
+
+
+
+
+<br>
+
+
+
+<div class="card">
+
+
+<h3 onclick="faq(2)" style="cursor:pointer">
+
+❓ Apakah bisa konsultasi dulu?
+
+</h3>
+
+
+<p id="faq2" style="display:none">
+
+Bisa, silakan hubungi JYFLASHER untuk pengecekan awal.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<div class="card">
+
+
+<h3 onclick="faq(3)" style="cursor:pointer">
+
+❓ Apakah menerima semua merk HP?
+
+</h3>
+
+
+<p id="faq3" style="display:none">
+
+Melayani berbagai perangkat Android, iPhone, dan komputer.
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+<section class="section" id="contact">
+
+
+<h2 class="title">
+CONTACT JYFLASHER
+</h2>
+
+
+
+<div class="card" style="text-align:center">
+
+
+<h3>
+🚀 Ready To Repair Your Device?
+</h3>
+
+
+<p>
+
+Hubungi JYFLASHER untuk konsultasi dan service.
+
+</p>
+
+
+<div>
+
+<a class="btn"
+href="https://wa.me/6285775125035">
+
+💬 WHATSAPP
+
+</a>
+
+
+<a class="btn"
+href="https://www.facebook.com/techfixsoftware1149"
+target="_blank"
+style="background:#1877f2;color:white;margin-left:10px;">
+
+📘 FACEBOOK
+
+</a>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<h2 style="color:#00ffff;font-family:Orbitron">
+
+JYFLASHER
+
+</h2>
+
+
+<p>
+
+Mobile Technology Solution
+
+</p>
+
+
+<p>
+
+© 2026 JYFLASHER All Rights Reserved
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- WHATSAPP FLOAT -->
+
+
+<a href="https://wa.me/6281234567890"
+
+style="
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+background:#25D366;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:35px;
+
+text-decoration:none;
+
+box-shadow:0 0 30px #25D366;
+
+z-index:999;
+
+">
+
+💬
+
+</a>
+
+
+
+
+
+
+
+
+<script>
+
+
+
+// REMOVE LOADER
+
+
+setTimeout(()=>{
+
+
+document.querySelector(".loader").style.display="none";
+
+
+},2500);
+
+
+
+
+
+
+
+
+// TYPING EFFECT
+
+
+
+let text =
+
+"ANDROID • IOS • PC • MOBILE TECHNOLOGY";
+
+
+
+let index=0;
+
+
+
+function typing(){
+
+
+if(index < text.length){
+
+
+document.querySelector(".typing").innerHTML += text.charAt(index);
+
+
+index++;
+
+
+setTimeout(typing,80);
+
+
+}
+
+
+}
+
+
+
+typing();
+
+
+
+
+
+
+
+
+
+
+// FAQ
+
+
+
+function faq(id){
+
+
+let box=document.getElementById("faq"+id);
+
+
+
+if(box.style.display==="none"){
+
+
+box.style.display="block";
+
+
+}
+
+else{
+
+
+box.style.display="none";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// PARTICLE SYSTEM
+
+
+
+for(let i=0;i<50;i++){
+
+
+let particle=document.createElement("div");
+
+
+
+particle.style.position="fixed";
+
+
+particle.style.width="5px";
+
+
+particle.style.height="5px";
+
+
+particle.style.background="#00ffff";
+
+
+particle.style.borderRadius="50%";
+
+
+particle.style.left=Math.random()*100+"%";
+
+
+particle.style.top=Math.random()*100+"%";
+
+
+particle.style.opacity="0.5";
+
+
+particle.style.boxShadow="0 0 15px cyan";
+
+
+
+particle.style.animation=
+
+"moveParticle "+
+
+(5+Math.random()*10)
+
++"s infinite";
+
+
+
+document.body.appendChild(particle);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// COUNTER ANIMATION
+
+
+
+let counters=document.querySelectorAll(".stat h2");
+
+
+
+counters.forEach(counter=>{
+
+
+let target=counter.innerHTML;
+
+
+
+counter.innerHTML="0";
+
+
+
+let count=0;
+
+
+
+let timer=setInterval(()=>{
+
+
+count+=Math.ceil(
+
+parseInt(target)
+
+/
+
+100
+
+);
+
+
+
+counter.innerHTML=count+"+";
+
+
+
+if(count>=parseInt(target)){
+
+
+counter.innerHTML=target;
+
+
+clearInterval(timer);
+
+
+}
+
+
+
+},30);
+
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<style>
+
+
+@keyframes moveParticle{
+
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-200px);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+.card p{
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+
+
+</style>
+
+
+
+
+
+</body>
+
+</html>
